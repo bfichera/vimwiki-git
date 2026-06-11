@@ -8,6 +8,6 @@ augroup vimwiki
   " Also do a git pull whenever home.md is opened
   au BufRead ~/vimwiki/index.md :silent !git pull
   " After writing to any file in the wiki dir, add all files in the repo, commit and push
-  au! BufWritePost ~/vimwiki/* !git add .;git commit -m "Autocommit and push";git push
+  au! BufWritePost ~/vimwiki/* !pushd ~/vimwiki; git add .;git commit -m "Autocommit and push";git push; popd
 augroup END
 
